@@ -36,4 +36,57 @@ Booleans zijn de enige primitieve datatypes die niet in de tutorial behandelt zi
 Bij het woord Classes denk ik gelijk aan de Object georienteerde manier, ik ben benieuwd wat dit in functioneel programmeren inhoud.  
 
 # Functions
-In de tutorial is ook kort het maken van een functie voorbij gekomen. Het boek gaat hier dieper op in, maar eerst wisselen we de interactieve GHCi in voor "echte" bestanden. 
+In de tutorial is ook kort het maken van een functie voorbij gekomen. Het boek gaat hier dieper op in, maar eerst wisselen we de interactieve GHCi in voor "echte" bestanden. In het boek staan links om de code die getoond wordt te downloaden en zelf te kunnen draaien. In Haskell wordt met modules gewerkt, in een module kunnen meerde regels code staan in tegenstelling tot GHCi waarbij je maar een regel code kan ingeven.  
+```
+Prelude> :load double.hs
+[1 of 1] Compiling Main ( double.hs, interpreted )
+Ok, modules loaded: Main.
+* Main> double 5
+10
+```  
+  
+Helaas werkt bovenstaand voorbeeld niet in mijn Haskell omgeving, na even Googlen blijkt dit er aan te liggen dat de module [niet Main mag heten zonder meerdere regels aan IO code](https://www.reddit.com/r/haskellquestions/comments/3of62e/the_io_action_main_is_not_defined_in_module_main/cvwouf8/). Ik weet niet of dit door een update in Haskell of een fout in het boek komt. Na het aanpassen van de naam van de module werkt het wel. 
+
+```
+double :: Integer -> Integer
+double x = x + x
+```
+
+In Java bestaat een functie uit een header en een body bijvoorbeeld
+```JAVA
+//Header
+public function String sayHello(String name) {
+  //Body
+  return "Hello, " + name;
+}
+```
+
+Bij Haskell lijkt de Header uit 1.5 regels te bestaan, eerst de naam gevolgd door de types. Dan op de volgende regel weer de naam gevolgd door de body. Het twee keer definieren van de naam lijkt mij dubbel op, maar wellicht heeft dit als voordeel dat je bovenin een bestand alle functies met types kan definieren en pas later in het bestand declareren waardoor je snel zou kunnen zien wat een module kan.
+
+## Recursie
+Recusie is een onderwerp waar ik al vaker ervaring mee gehad heb, ik verwacht dat de implementatie hiervan (een functie die zichzelf aanroept) in Haskell niet anders zal zijn dan in andere talen. 
+```
+Prelude> let fact x = if x == 0 then 1 else fact (x - 1) * x
+```
+Dit is (behalve dan in 1 regel) zoals ik zou verwachten bij een recursieve functie.
+
+```
+module Main where
+  factorial :: Integer -> Integer
+  factorial 0 = 1
+  factorial x = x * factorial (x - 1)
+```
+De functie hierboven is wel anders dan ik zou verwachten, maar met de omschrijving erbij is het best logisch. Als de input `0` is dan is de output `1`. Als de input `x` is, is de output `x * factorial (x - 1)`.
+
+### Guards
+```
+module Main where
+factorial :: Integer -> Integer
+factorial x 
+  | x > 1 = x*  factorial (x - 1)
+  | otherwise = 1
+```
+Guards zijn een principe waarvan ik nog nooit eerder gehoord had, maar de theorie vind ik wel interessant. Een guard is een syntax waarmee je de input eerst kan vergelijken via een expressie en als er true uit komt voert hij de bijbehorende body uit. Ik zie niet wat het voorbeeld is ten op zichte van een if statement, wellicht omdat Haskell geen else if kent?
+
+# Fin
+In de volgende blogpost zal ik verder gaan met Day 1: Logical. In deze post is het voornamelijk herhaling geweest van de tutorial, maar er zijn ook zeker interessante nieuwe concepten voorbij gekomen. Ik ben wel van mening dat de syntax nog steeds niet altijd gelijk duidelijk is. 
