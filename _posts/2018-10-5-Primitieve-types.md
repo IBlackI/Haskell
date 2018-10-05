@@ -47,7 +47,7 @@ Ok, modules loaded: Main.
   
 Helaas werkt bovenstaand voorbeeld niet in mijn Haskell omgeving, na even Googlen blijkt dit er aan te liggen dat de module [niet Main mag heten zonder meerdere regels aan IO code](https://www.reddit.com/r/haskellquestions/comments/3of62e/the_io_action_main_is_not_defined_in_module_main/cvwouf8/). Ik weet niet of dit door een update in Haskell of een fout in het boek komt. Na het aanpassen van de naam van de module werkt het wel. 
 
-```
+```HASKELL
 double :: Integer -> Integer
 double x = x + x
 ```
@@ -70,7 +70,7 @@ Prelude> let fact x = if x == 0 then 1 else fact (x - 1) * x
 ```
 Dit is (behalve dan in 1 regel) zoals ik zou verwachten bij een recursieve functie.
 
-```
+```HASKELL
 module Main where
   factorial :: Integer -> Integer
   factorial 0 = 1
@@ -79,7 +79,7 @@ module Main where
 De functie hierboven is wel anders dan ik zou verwachten, maar met de omschrijving erbij is het best logisch. Als de input `0` is dan is de output `1`. Als de input `x` is, is de output `x * factorial (x - 1)`.
 
 ### Guards
-```
+```HASKELL
 module Main where
 factorial :: Integer -> Integer
 factorial x 
