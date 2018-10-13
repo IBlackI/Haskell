@@ -1,4 +1,35 @@
 ---
 layout: post
-title: Primitieve types
+title: Tuples and Lists
 ---
+In de vorige twee blogposts zijn de basis van Haskell besproken.   
+In deze blogpost ga ik dieper op de taal in. Ook zal het tempo iets hoger liggen dan in de vorige blogposts.  
+
+# Tupels
+De tutorial van Haskell heeft tupels al laten zien, echter gaan we er nu gebruik van maken om te rekenen. 
+Als voorbeeld zal de [Rij van Fibonacci](https://nl.wikipedia.org/wiki/Rij_van_Fibonacci) gebruikt worden dit is een rij van getallen waarbij elke waarde de som van de twee voorgaande waardes is.  
+Recursief zou dit met onderstaand voorbeeld te berekenen zijn.
+```
+fib :: Integer -> Integer
+fib 0 = 1
+fib 1 = 1
+fib x = fib (x - 1) + fib (x - 2)
+```
+Deze voorbeeld code heeft als nadeel dat een aanroep met een hoge waarde voor x heel vaak dezelfde waardes van x zal uitrekenen.  
+Tijdens het onderwerp algorimtes is geleerd dat elke dubbele functie aanroep vermeden zou moeten worden.  
+Gelukkig is deze functie efficienter te maken doormiddel van een tupel.  
+
+##Fibonacci met tupel
+Voor het berekenen heeft de tupel 3 waarde nodig (Fib(x-2), Fib(x-1), x). Onderstaand voorbeeld is hier een implementatie van:  
+```
+fibTuple :: (Integer, Integer, Integer) -> (Integer, Integer, Integer)
+fibTuple (x, y, 0) = (x, y, 0)
+fibTuple (x, y, index) = fibTuple (y, x + y, index - 1)
+
+fibResult :: (Integer, Integer, Integer) -> Integer
+fibResult (x, y, z) = x
+
+fib :: Integer -> Integer
+fib x = fibResult (fibTuple (0, 1, x))
+```  
+het gebruik van twee helperfuncties zorgt ervoor dat het mogelijk is om fib x aan te roepen zonder te hoeven  
