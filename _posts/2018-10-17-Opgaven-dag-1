@@ -1,0 +1,41 @@
+---
+layout: post
+title: Opgaven dag 1
+---
+# How many different ways can you find to write allEven ?
+
+```Haskell
+Prelude> let input = [1..12]
+Prelude> [x | x <- input, even x]
+[2,4,6,8,10,12]
+```
+
+Hiernaast heb ik ook geprobeerd een uitwerking doormiddel van guards te maken, echter lukte dit niet.
+
+# Write a function that takes a list and returns the same list in reverse.
+
+```Haskell
+module Reverse where
+  myReverse :: [Integer] -> [Integer]
+  myReverse [] = []
+  myReverse (h:t) = myReverse(t):h
+```
+Helaas bleek deze oplossing niet te werken. De `:` operator is om een element aan de voorkant van een lijst toe tevoegen, en zoals in dit geval werkt het toevoegen van een lijst aan een nummer niet.
+De oplossing hiervoor is het gebruik van de `++` operator. Het resultaat is onderstaande uitwerking.
+
+```
+module Reverse where
+  myReverse :: [Integer] -> [Integer]
+  myReverse [] = []
+  myReverse (h:t) = myReverse(t) ++ [h]
+```
+Als resultaat:
+```
+*Reverse> let list = [1..12]
+list :: (Num a, Enum a) => [a]
+*Reverse> myReverse list
+[12,11,10,9,8,7,6,5,4,3,2,1]
+it :: [Integer]
+```
+
+# Write a function that builds two-tuples with all possible combinations of two of the colors black, white, blue, yellow, and red. Note that you should include only one of (black, blue) and (blue, black)
