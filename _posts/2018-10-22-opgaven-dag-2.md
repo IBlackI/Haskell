@@ -39,7 +39,7 @@ module Multiples where
 ```
 Deze opgave was relatief makkelijk, echter begreep ik niet wat er met de laatste zin bedoeld werd... [hier](https://github.com/kikito/7-languages-in-7-weeks/blob/master/7-haskell/day-2/lazy.hs) is een uitwerking van iemand andres, daar werd de zipWith functie gebruikt. Ik betwijfel of dit de bedoeling was, maar het lijkt te werken. ish...
 
->Use a partially applied function to define a function that will return half of a number and another that will append \n to the end of any string.
+> Use a partially applied function to define a function that will return half of a number and another that will append \n to the end of any string.
 
 
 ```
