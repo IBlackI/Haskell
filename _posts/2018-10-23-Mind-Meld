@@ -1,0 +1,22 @@
+---
+layout: post
+title: The Mind Meld
+---
+Het laatste hoofdstuk uit het boek. Ik merk tot nu toe dat de materie steeds complexer wordt. Ik hoop dat ik dit hoofdstuk nog ga begrijpen want van wat ik gehoord heb is deze vrij pittg.  
+
+# Classes and Types
+
+De basic types hebben wij al tijdens de eerste blog gezien, als korte herhaling zijn bijvoorbeeld een Bool en Char primitive types. Een String is een lijst van Char.
+
+## User-Defined Types
+
+Het is in Haskell mogelijk om zelf een Type te definieren, dit gaat doormiddel van onderstaande syntax
+```
+data %name% = Type (| Type)
+```
+waarbij `%name%` aangeeft hoe het type moet gaan heten.
+Het is verplicht minimaal 1 ander Type aan te geven waaruit jou Type kan bestaan. Met het `|` teken kan je aangeven dat jou type uit één de aangegeven Types kan bestaan. Een Tupel of Lijst is ook een type. Het is dus mogelijk om bijvoorbeeld de volgende Type te definieren:
+```
+data Adres = (String, Number)
+```
+Een adres bestaat nu dus uit een tupel met daarin een String (straatnaam) en Number (huisnummer). String en Nummer zijn beide echter geen primitieve waarde. Het Type systeem van Haskell vertaald uiteindelijk alle types naar primitieve waarden.
