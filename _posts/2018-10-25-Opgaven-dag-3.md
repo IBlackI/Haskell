@@ -50,3 +50,16 @@ Bovenstaande uitwerking is een uitbreiding op de eerste, deze heeft een functie 
 >  Represent a maze in Haskell. You’ll need a Maze type and a Node type, as well as a function to return a node given its coordinates. The node should have a list of exits to other nodes.
 
 Voordat ik aan deze opdracht begin: Deze (samen met de volgende) opdracht klinkt lastiger dan wat ik als Challenge zou doen, ik heb bijna geen idee waar ik zou moeten beginnen, laat staan een algoritme schrijven die dit kan oplossen.
+
+Als eerste is het bepalen wat een Maze nou eigenlijk is. Volgens de opdracht is een Maze een type, en een Node is een type met een lijst van exits. Ook moet er een functie zijn die op basis van coordinaten een Node terug kan geven. Hieruit kan ik concluderen dat de lijst van exits dus een lijst van de coordinaten van de volgende nodes zijn. `node = [Exit]` De exit was de locatie van de volgende node, oftewel een coordinaat `Exit = (Int, Int)`. De maze zou volgens mij een Map kunnen zijn waarbij de Exit de key van een Node kan zijn. `Maze = Map Exit Node`. Dat zou er dan volgens mij zo uit moeten komen te zien:
+``` HASKELL
+module Maze where 
+  import Data.Map (Map)
+  import qualified Data.Map as Map
+  
+  type Exit = (Int, Int)
+  type Node = Maybe [Exit]
+  
+  maze :: Map Exit Node
+  maze = Map.fromList [((0, 0), Just [(0,1), (1,0)]), ((1,0), Nothing), ((0,1), Just [(1,1), (0,2)]), ((1,1), Nothing), ((0,2), Just [(0,3)]), ((0,3), Just [(0,4), (1,4)]), ((0,4), Nothing), ((1,4), Just [(1,5)]), ((1,5), Nothing)]
+```
