@@ -164,12 +164,12 @@ Nu het algoritme lijkt te werken is het tijd om het wat lastiger te maken.
 ```
 Bovenstaande is een mooie definitie van een maze, maar om je te helpen is hieronder een visualisatie van die definitie. 
 ![Maze](/Haskell/images/maze.jpeg)
-de definitie van die maze kan je gebruiken in haskell met deze regel code:
+Bovenstaande maze is in Haskell te gebruiken met de volgende code:
 ```HASKELL
   largeMaze :: Maze
   largeMaze = Map.fromList [((0,0), Just [(0,1)]), ((0,1), Just [(0,2)]),((0,2), Just [(1,2)]),((1,2), Just [(1,3), (2,2)]),((1,3), Just [(1,4)]),((1,4), Just [(2,4)]),((2,0), Nothing),((2,2), Just [(3,2)]),((2,4), Just [(3,4)]),((3,0), Just [(2,0), (4,0)]),((3,1), Just [(3,0)]),((3,2), Just [(3,1), (3,3), (4,2)]),((3,3), Just [(3,4)]),((3,4), Just [(3,5)]),((3,5), Just [(4,5)]),((4,0), Nothing),((4,2), Just [(5,2)]),((4,5), Just [(5,5)]),((5,1), Just [(6,1)]),((5,2), Just [(5,1)]),((5,4), Just [(6,4)]),((5,5), Just [(5,4)]),((6,0), Nothing),((6,1), Just [(6,0)]),((6,3), Nothing),((6,4), Just [(6,3)])]
 ```
-Het draaien van het `solveMaze (0,0) largeMaze (6,0)` op deze largeMaze geeft 
+Het draaien van `solveMaze (0,0) largeMaze (6,0)` op deze largeMaze geeft 
 ```
 *Maze> solveMaze (0,0) largeMaze (6,0)
 [(0,1),(0,2),(1,2),(2,2),(3,2),(4,2),(5,2),(5,1),(6,1),(6,0)]
