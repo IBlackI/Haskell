@@ -52,7 +52,7 @@ Bovenstaande uitwerking is een uitbreiding op de eerste, deze heeft een functie 
 Voordat ik aan deze opdracht begin: Deze (samen met de volgende) opdracht klinkt lastiger dan wat ik als Challenge zou doen, ik heb bijna geen idee waar ik zou moeten beginnen, laat staan een algoritme schrijven die dit kan oplossen.
 
 Als eerste is het bepalen wat een Maze nou eigenlijk is. Volgens de opdracht is een Maze een type, en een Node is een type met een lijst van exits. Ook moet er een functie zijn die op basis van coordinaten een Node terug kan geven. Hieruit kan ik concluderen dat de lijst van exits dus een lijst van de coordinaten van de volgende nodes zijn. `node = [Exit]` De exit was de locatie van de volgende node, oftewel een coordinaat `Exit = (Int, Int)`. De maze zou volgens mij een Map kunnen zijn waarbij de Exit de key van een Node kan zijn. `Maze = Map Exit Node`. Dat zou er dan volgens mij zo uit moeten komen te zien:
-``` HASKELL
+```HASKELL
 module Maze where 
   import Data.Map (Map)
   import qualified Data.Map as Map
@@ -134,7 +134,7 @@ it :: [Exit]
 hij heeft dus een oplossing gevonden!
 ## Een grotere maze!
 Nu het algoritme lijkt te werken is het tijd om het wat lastiger te maken.
-``` MAZE
+```MAZE
 ((0,0), [(0,1)]),
 ((0,1), [(0,2)]),
 ((0,2), [(1,2)]),
@@ -163,9 +163,9 @@ Nu het algoritme lijkt te werken is het tijd om het wat lastiger te maken.
 ((6,4), [(6,3)])
 ```
 Bovenstaande is een mooie definitie van een maze, maar om je te helpen is hieronder een visualisatie van die definitie. 
-![Maze](/images/maze.jpeg)
+![Maze](/Haskell/images/maze.jpeg)
 de definitie van die maze kan je gebruiken in haskell met deze regel code:
-``` HASKELL
+```HASKELL
   largeMaze :: Maze
   largeMaze = Map.fromList [((0,0), Just [(0,1)]), ((0,1), Just [(0,2)]),((0,2), Just [(1,2)]),((1,2), Just [(1,3), (2,2)]),((1,3), Just [(1,4)]),((1,4), Just [(2,4)]),((2,0), Nothing),((2,2), Just [(3,2)]),((2,4), Just [(3,4)]),((3,0), Just [(2,0), (4,0)]),((3,1), Just [(3,0)]),((3,2), Just [(3,1), (3,3), (4,2)]),((3,3), Just [(3,4)]),((3,4), Just [(3,5)]),((3,5), Just [(4,5)]),((4,0), Nothing),((4,2), Just [(5,2)]),((4,5), Just [(5,5)]),((5,1), Just [(6,1)]),((5,2), Just [(5,1)]),((5,4), Just [(6,4)]),((5,5), Just [(5,4)]),((6,0), Nothing),((6,1), Just [(6,0)]),((6,3), Nothing),((6,4), Just [(6,3)])]
 ```
