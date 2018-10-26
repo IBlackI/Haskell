@@ -6,7 +6,7 @@ title: First steps
 # De Opdracht
 Voor ASD-APP moeten wij als opdracht een nieuwe programmeertaal leren. 
 Het leerproces moeten wij in blogvorm vastleggen, ik ga dit aan de hand van een Github Pages blog doen.
-Helaas konden wij niet elke programmeer taal kiezen maar was de keuze beperkt tot vijf mogelijkheden:  
+Helaas konden wij niet elke programmeertaal kiezen maar was de keuze beperkt tot vijf mogelijkheden:  
 
 1. Prolog
 2. Scala
