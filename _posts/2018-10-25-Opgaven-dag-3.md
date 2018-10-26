@@ -162,7 +162,7 @@ Nu het algoritme lijkt te werken is het tijd om het wat lastiger te maken.
 ((6,4), [(6,3)])
 ```
 Bovenstaande is een mooie definitie van een maze, maar om je te helpen is hieronder een visualisatie van die definitie. 
-![Maze](images/maze.png)
+![Maze](images/maze.jpeg)
 de definitie van die maze kan je gebruiken in haskell met deze regel code:
 ``` HASKELL
   largeMaze :: Maze
@@ -178,3 +178,5 @@ En dat klopt!
 # Conclusie
 Hoewel deze opgaven als zeer lastig op mij over kwamen ben ik er wel trots op dat ik deze heb weten op te lossen. Ik weet niet zeker of de hashtable opgave gemaakt is zoals bedoeld, maar de maze opgave(n) zijn zeker goed. De solveNode heeft veel moeite gekost om werkend te krijgen, echter is het na kritsch kijken met een groep wel gelukt. Het bedenken van de pseudocode viel wel mee, maar ik bleef vastlopen op verschillende Type errors. De Haskell compiler geeft wel aan wat hij krijgt en wat hij verwacht, maar dat vond ik toch lastig om te vertalen naar de locatie van het daadwerkelijke probleem. Dit doet mij wel denken aan het leren van Object Oriented programmeren in Java, daarbij kreeg je in de console ook errors als NullPointerException zonder dat ik wist waar dat door kon komen. Haskell vind ik een interessante taal, echter blijf ik de syntax zoals eerder in deze blog omschreven onduidelijk vinden. De opgave in het boek ben ik niet altijd uit gekomen, en zoals in het boek omschreven staat heeft Haskell geen grote community, hierdoor vond ik het ook vaak lastig om de antwoorden te vinden op problemen die ik tegen kwam. 
 
+## TLDR
+Pure taal, lastig te leren en onduidelijke syntax.
