@@ -66,7 +66,8 @@ module Maze where
 (De rest van deze blog is geschreven nadat de uitwerking van de maze niet werkte en met een groep tijdens de les is besproken)
 
 ## De maze laten oplossen. 
->  Use a List monad to solve the maze.
+>  Use a List monad to solve the maze.  
+
 Kijk dat is lekker simpel! Even een algorimte in een nieuwe taal uitwerken waarbij ik de syntax soms nog nauwlijks snap... Goed, wie niet waagt wie niet wint. De maze zoals hierboven beschreven is slechts in een richting te lopen, ik hoef mij dus geen zorgen te maken dat het algorimte in een loop zal komen. Om de maze op te lossen zal een recursieve oplossing gebruiken. Onderstaand is de uitwerking in pseudocode:
 ```PSEUDO
   solveNode:
@@ -162,7 +163,7 @@ Nu het algoritme lijkt te werken is het tijd om het wat lastiger te maken.
 ((6,4), [(6,3)])
 ```
 Bovenstaande is een mooie definitie van een maze, maar om je te helpen is hieronder een visualisatie van die definitie. 
-![Maze](images/maze.jpeg)
+![Maze](/images/maze.jpeg)
 de definitie van die maze kan je gebruiken in haskell met deze regel code:
 ``` HASKELL
   largeMaze :: Maze
