@@ -54,6 +54,6 @@ geeft x / 2 terug... Spreekt inmiddels voor zich.
 ## Append
 Aangezien de : operator alleen aan het begin van een lijst toe kan voegen moet de lijst eerst omgedraaid worden. Na het toevoegen draait de lijst weer om waardoor het lijkt alsof de "\\n" aan het einde is toegevoegd. 
 
-# Refelectie
+# Reflectie
 
 De opgave voor deze dag vielen mee. De enige opgave waar ik niet uit kom zal ik wel te moeilijk over denken / niet begrijpen. Volgende post gaat over de laatste dag uit het boek. 
